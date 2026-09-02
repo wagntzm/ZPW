@@ -1,0 +1,15 @@
+repozytorium - folder/katalog do przechowywania plików
+
+git – program do śledzenia zmian w plikach i ich wersji
+
+commit – zapisana wersja zmian 
+
+branch – gałąź, czyli osobna wersja projektu (bazuje na main)
+
+checkout – przełączenie się na inną gałąź lub wersję plików
+
+merge – połączenie zmian z jednej gałęzi do drugiej
+
+rebase – przeniesienie swoich commitów na nową podstawę, żeby historia była jedną prostą linią
+
+github/bitbucket/gitlab – serwisy w internecie do trzymania repozytoriów i pracy nad nimi w zespole
