@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <title>
+            Zadania jquery
+        </title>
+        <script>
+
+            let $licznik = 0;
+
+            $(function(){
+                $("button").click(function(){
+                    $("#komunikat").text("Cześć!")
+                })
+
+                $("#kwadrat").click(function(){
+                    $("#kwadrat").css("background-color", "red")
+                    $licznik++
+                    $("#komunikat").text("Klinięto " + $licznik)
+                })
+
+                $("#resetuj").click(function(){
+                    $("#kwadrat").css("background-color", "lightgray")
+                    $("#komunikat").text("")
+                })
+
+
+            })
+        </script>
+
+
+
+        <style>
+            #kwadrat { width: 150px; height: 150px; background: lightgray; }
+        </style>
+    </head>
+    <body>
+        <button id="przywitaj">Przywitaj się</button>
+        <button id="resetuj">resetuj</button>
+        <p id="komunikat"></p>
+        
+        <div id="kwadrat"></div>
+        
+    </body>
+</html>
