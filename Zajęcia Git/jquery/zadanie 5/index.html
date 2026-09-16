@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <title>
+            Zadania jquery
+        </title>
+        <script>
+
+
+            $(function(){
+                $("a").eq(1).addClass("another_link")
+                $("a").eq(2).removeClass("link")
+
+                $("#przycisk").click(function(){
+                    $("p").removeClass("akapit1")
+                    $("p").removeClass("akapit2")
+                    alert("sukces")
+            })
+
+            })
+
+            
+        </script>
+
+
+
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        ul {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        li:hover {
+            color: #007bff;
+            font-weight: bold;
+        }
+        .link{
+            color: grey;
+            text-decoration: none;
+        
+        }
+        
+        .another_link{
+            background-color: black;
+        }    
+        
+        .completely_different_link{
+            background-color: yellow;
+        
+        }
+        .akapit1 {
+            background-color: red;
+        }
+        .akapit2 {
+            font-size: 150%;
+        }
+ 
+    </style>
+    </head>
+    <body>
+        <h1>Lista Gier Komputerowych</h1>
+ 
+
+        <ul>
+            <li><a href="https://www.google.com">The Witcher 3: Wild Hunt</a></li>
+            <li><a href="https://www.google.com">Cyberpunk 2077</a></li>
+            <li><a href="https://www.google.com" class="link">Elden Ring</a></li>
+            <li><a href="https://www.google.com">Baldur's Gate 3</a></li>
+
+        </ul>
+
+        <p class="akapit1 akapit2" id="akapit">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in dui lacinia tortor porta dictum sed posuere quam. Mauris ligula sapien, sodales quis ipsum eget, rutrum consectetur turpis. Donec sit amet ante augue. Nam in erat lorem. Duis consectetur et purus at lobortis. Phasellus purus nulla, faucibus euismod lorem at, tristique porta mi. Integer a rhoncus elit. In tempus et purus in accumsan.
+        </p>
+
+        <button id="przycisk">
+            przycisk
+
+        </button>
+
+    </body>
+</html>
