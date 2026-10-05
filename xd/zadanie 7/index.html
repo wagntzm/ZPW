@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <title>
+            Zadania jquery
+        </title>
+        <script>
+
+            // $(document).on("keypress keyup keydown", function(event){
+            //     $("#eventType").text(event.type)
+            // })
+            
+            // $(document).on("mousemove", function(event){
+            //     $("#pageX").text(event.pageX)
+            //     $("#pageY").text(event.pageY) 
+            // })
+
+            // $(function(){
+
+
+
+
+
+            // })
+
+            // let debug_licznik = 0;
+
+
+            
+
+            $(function(){
+
+                generuj_japko()
+
+            })
+
+                
+ 
+
+            function generuj_japko(){
+                let $japko = $("#japko")
+
+                $japko.css({
+                    "margin-left":Math.floor((Math.random() * 500) + 1),
+                    "margin-top":Math.floor((Math.random() * 500) + 1)
+                
+                
+                })
+            }
+
+
+            
+            $(document).on("keydown", function(event){
+                if (event.key == "d") $("#kwadrat").css("margin-left", "+=10px")
+                if (event.key == "a") $("#kwadrat").css("margin-left", "-=10px")
+                if (event.key == "s") $("#kwadrat").css("margin-top",  "+=10px")
+                if (event.key == "w") $("#kwadrat").css("margin-top",  "-=10px")
+
+                let $kwadrat = $("#kwadrat")
+                let $japko = $("#japko")
+
+                let k = $kwadrat.offset()
+                let j = $japko.offset()
+
+                console.log(k.left, k.top, $kwadrat.outerWidth(), $kwadrat.outerHeight())
+                console.log(j.left, j.top, $japko.outerWidth(), $japko.outerHeight())
+
+                if (j.left < k.left + $kwadrat.outerWidth()  && j.left + $japko.outerWidth()  > k.left &&
+                    j.top  < k.top  + $kwadrat.outerHeight() && j.top  + $japko.outerHeight() > k.top) {
+                    // debug_licznik++;
+                    // console.log(debug_licznik);
+                    generuj_japko()
+                }
+
+            })
+
+            
+        </script>
+
+            
+
+        <style>
+            #kwadrat {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                position: absolute;
+            }
+
+            #japko {
+                width: 20px;
+                height: 20px;
+                background-color: green;
+                position: absolute;
+            }
+ 
+    </style>
+    </head>
+    <body>
+        <!-- <input type="text" id="pole">
+
+        <p>
+            Typ zdarzenia:
+            <span id="eventType">---</span>
+        </p>
+
+        <p>
+            Pozycja myszy:
+            X = <span id="pageX">---</span>,
+            Y = <span id="pageY">---</span>
+        </p> -->
+
+        <div id="kwadrat">
+
+        </div>
+
+        <div id="japko">
+
+        </div>
+
+    </body>
+</html>
