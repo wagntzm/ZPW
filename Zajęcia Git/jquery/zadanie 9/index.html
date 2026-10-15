@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+
+    <script>
+        $(function(){
+            $("#formularz").submit(function(e){
+                e.preventDefault()
+
+                if ($("#password").val().length >= 6){
+                    $("#info").text("Haslo jest nie za krotkie!").css("color", "green")
+
+                } else {
+                    $("#info").text("Haslo jest za krotkie!").css("color", "red")
+                }
+
+
+
+            })
+
+            $("#rozmiar").change(function(){
+                $("#cena").text("Do zapłaty: " + $(this).val())
+
+            })
+
+
+
+
+        })
+        
+
+    </script>
+
+
+
+</head>
+<body>
+    <form id="formularz">
+        <input type="email" id="email">
+        <input type="password" id="password">
+        <button type="submit">Wyślij</button>
+    </form>
+    <p id="info">
+
+    </p>
+    <hr>
+    <select id="rozmiar">
+        <option value="20">Mała 20zł</option>
+        <option value="30">Średnia 30zł</option>
+        <option value="40">Duża 40zł</option>
+    </select>
+    <p id="cena"></p>
+</body>
+</html>
