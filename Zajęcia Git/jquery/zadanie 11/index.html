@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+    <script>
+
+        $(function(){
+
+            $("#sprawdz").click(function(event){
+
+                event.preventDefault()
+
+                let name = $("#nazwisko").val().trim()
+
+                if(name === ""){
+                    $("#blad").text("podaj nazwisko").css("color", "red")
+                } else {
+                    $("#blad").text("wyslano formularz").css("color", "green")
+                }
+
+
+            })
+
+            $("#sprawdzWiek").click(function(){
+
+                let wiek = Number($("#wiek").val())
+
+                if(isNaN(wiek) || wiek < 0){
+                    $("#bladWiek").text("wiek musi byc liczba")
+                } else {
+                    $("#bladWiek").text("Masz lat: " + wiek)
+                }
+
+
+            })
+
+        })
+
+
+    </script>
+
+    <style>
+
+    </style>
+
+
+
+</head>
+<body>
+    <input type="text" id="nazwisko">
+    <button id="sprawdz">Sprawdz</button>
+    <p id="blad"></p>
+    <hr>
+    <form id="formularz">
+        <input type="text" id="nazwisko" placeholder="Nazwisko">
+        <button type="submit">Wyslij</button>
+
+
+    </form>
+    <p id="info"></p>
+    <hr>
+    <input type="text" id="wiek">
+    <button id="sprawdzWiek">sprawdz</button>
+    <p id="bladWiek"></p>
+
+
+
+</body>
+</html>
